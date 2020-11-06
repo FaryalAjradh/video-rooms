@@ -63,8 +63,8 @@ body {
     /* display: grid; */
     height: 100%;
     width: 100%;
-    /* place-items: center; */
-    background-image: url(bg.jpg);
+    /* place-items: center; 
+    background-image: url(bg.jpg);*/
 }
 
 ::selection {

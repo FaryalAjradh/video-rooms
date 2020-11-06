@@ -55,7 +55,7 @@
             </div>
         </div>
     </div> -->
-    <div class="container-fluid homepage" style="margin-top: 7%;">
+    <div class="container-fluid homepage" style="padding-top: 7%;background-image: url(bg.jpg);">
         <div class="row">
             <div class="col-lg-6 overflow-auto" style="padding-left: 10%; max-height: 470px;">
                 <!-- an about section to write about what the website is -->
@@ -145,8 +145,69 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid homepage">
+    <div class="container-fluid" style="padding-top: 3%;padding-bottom:4%;background-color:#ea5455; ">
+        <div class="row" style="padding-left:10%;padding-right:10%;">
+            <div class="col-md-4 mt-4">
+                <div class="card profile-card-5">
+                    <div class="card-img-block">
+                        <img class="card-img-top" src="p2.gif" style="max-height:80%;" alt="Card image cap">
+                    </div>
+                    <div class="card-body pt-0">
+                        <h4 class="card-title" style="color:#C00000;font-weight: bold;">Step - 1</h4>
+                        <p class="card-text" style="font-weight:200;">
+                            Get url or play from suggestions
+                        </p>
+                    </div>
+                </div>
+            </div>
 
+            <div class="col-md-4 mt-4">
+                <div class="card profile-card-5">
+                    <div class="card-img-block" >
+                        <img class="card-img-top" src="p2.png" style="max-height:20%;" alt="Card image cap"  >
+                    </div>
+                    <div class="card-body pt-0">
+                        <h4 class="card-title" style="color:#C00000;font-weight: bold;">Step - 2</h4>
+                        <p class="card-text">
+                            Create/ Join a room
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mt-4">
+                <div class="card profile-card-5">
+                    <div class="card-img-block">
+                        <img class="card-img-top" src="p3.gif" alt="Card image cap">
+                    </div>
+                    <div class="card-body pt-0">
+                        <h4 class="card-title" style="color:#C00000;font-weight: bold;">Step - 3</h4>
+                        <p class="card-text">
+                            Enter a room and chat with friends
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="padding-top: 3%;padding-bottom:4%;background-color:#decdc3">
+        <form style="padding-left:10%;padding-right:10%;">
+            <center><h3 style="font-weight: bold;">Suggestions?<h3></center>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Email address</label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Comments</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <center>
+                <button type="submit" class="rounded-pill btn btn-danger" style="width:20%;">Submit</button>
+            </center>
+            </div>
+            
+          </form>
     </div>
     <script>
         const loginText = document.querySelector(".title-text .login");
@@ -167,18 +228,11 @@
             return false;
         });
     </script>
-    <script type="text/javascript" src="jquery/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript" src="venobox/venobox.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('.venobox').venobox({
-                closeColor: '#f4f4f4',
-                spinColor: '#f4f4f4',
-                closeBackground: '#17191D',
-                overlayColor: 'rgba(23, 25, 29, 0.8)'
-            });
-        });
-    </script>
+   <footer style="background-color:e5e5e5">
+       <center>
+       <p>This page belongs to the team hackingdivas</p>
+    </center>
+   </footer>
 </body>
 
 </html>
