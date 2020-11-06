@@ -63,6 +63,12 @@
                     <h1>Some title</h1>
                     <h3>Some text</h3>
                     <a class="venobox" data-autoplay="true" data-vbtype="video" href="https://youtu.be/VHgBM3NmrVk"><button type="button" class="btn rounded-pill btn-primary">Watch Video</button></a>
+                    <div class="videos">
+                        <div class="video" style="background-image: url();">
+
+                        </div>
+                    </div>
+                    
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                         Ab mollitia harum dolores id pariatur incidunt at eius adipisci repellat excepturi in
                         laboriosam, sequi, libero reprehenderit commodi? Fugit nulla ut fuga.</p>
@@ -165,7 +171,12 @@
     <script type="text/javascript" src="venobox/venobox.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('.venobox').venobox();
+            $('.venobox').venobox({
+                closeColor: '#f4f4f4',
+                spinColor: '#f4f4f4',
+                closeBackground: '#17191D',
+                overlayColor: 'rgba(23, 25, 29, 0.8)'
+            });
         });
     </script>
 </body>
