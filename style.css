@@ -227,5 +227,20 @@ form .btn input[type="submit"] {
     text-align: center;
     border-radius: 50%;
     padding-left: 3%;
-    padding-top: 4%;
+    padding-top: 1%;
+}
+
+.alert {
+    position: absolute;
+    margin: auto;
+    background-color: #101a2d;
+    color: #fff;
+    padding: 10px 0;
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
 }
