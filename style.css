@@ -244,3 +244,12 @@ form .btn input[type="submit"] {
     bottom: 0;
     display: none;
 }
+
+.icon {
+    padding: 10px;
+    background: dodgerblue;
+    color: white;
+    min-width: 50px;
+    text-align: center;
+  }
+  
