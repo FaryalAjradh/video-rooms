@@ -288,11 +288,10 @@
                                     <input type="submit" value="Generate Room Code">
                                 </div>
                                 <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                <!--<button type="button" class="btn btn-primary" data-toggle="modal"
                                     data-target="#exampleModal">
                                     Launch demo modal
-                                </button>
-
+                                </button>-->
                                 <!-- Modal -->
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -322,21 +321,20 @@
                             </form>
                        
         
-                                <form onsubmit="return gotoroom();" class="signup" >
+                                <form onsubmit="return printfd(this);" class="signup" >
                                 <div class="field">
                                     <input type="text" placeholder="Your Name" id="name-ag" required>
                                 </div>
                                 <div class="field">
                                     <input type="text" placeholder="Room Code" id="your-key" required>
                                 </div>
+                            
                                 <div class="field btn">
                                     <div class="btn-layer">
                                     </div>
-                                    <!--<button onclick="gotoroom()">go to room</button>-->
                                     <input type="submit" value="Join">
                                 </div>
                             </form>
-
                         </div>
                     </div>
                 </div>

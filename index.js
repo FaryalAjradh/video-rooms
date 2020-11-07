@@ -71,22 +71,36 @@ function gotoroom(){
         console.log(keys.length);
         var present = keys.includes(val);
         console.log(present);
+        window.location.href = "why.html";
         if (present == true) {
             window.localStorage.setItem("Linktovideo", val);
             window.localStorage.setItem("name", name);
-            url = "theatre.html?key=" + val + "&name=" + name;
+            //url = "theatre.html?key=" + val + "&name=" + name;
             console.log(url);
             console.log(present);
-            window.location.replace(url);
+            //window.location.replace(url);
         } else {
             alert("Stay Calm And Enter The Correct Key, Mind the spaces😁!");
             document.getElementById("name-ag").value = "";
             document.getElementById("your-key").value = "";
         }
+        
     }
+    return false;
 }
 
-
+function printfd(){
+    console.log("HELLLL");
+    var name = document.getElementById("name-ag").value;
+    //var fire = firebase.database().ref('Link');
+    var val = document.getElementById("your-key").value;
+    alert(name);
+    alert(val);
+    window.localStorage.setItem("Linktovideo", val);
+    window.localStorage.setItem("name", name);
+    window.location.href = "theatre.html?key=" + val + "&name=" + name;
+    return false;
+}
 function sendkey(key) {
     console.log("sending");
     var email = document.getElementById("email").value;
@@ -119,6 +133,8 @@ fetch(url)
             for(var i = 1; i <= 16; i++){
                 if(data.items[i].id.videoId != undefined){
                     //console.log( document.getElementById(i).href);
+                    console.log(data.items[i]);
+                    console.log(data.items[i].snippet.thumbnails.medium.url);
                     document.getElementById(i).href = "https://youtu.be/" + data.items[i].id.videoId;
                     document.getElementById(i*10).innerHTML = "https://youtu.be/" + data.items[i].id.videoId;
                     console.log(data.items[i].id.videoId);
@@ -146,7 +162,7 @@ function uploadFile(){
   file_name = file.name;
   //put request upload file to firebase storage
   thisRef.put(file).then(function(snapshot) {
-     alert("File Uploaded")
+     alert("File Uploaded");
      //console.log('Uploaded a blob or file!');
   });
 }
