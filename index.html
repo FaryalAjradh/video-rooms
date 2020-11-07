@@ -315,7 +315,8 @@
                                 <div class="signup-link">
                                     Want to join an existing room? <a href="">Join now</a></div>
                             </form>
-                            <form onsubmit="return gotoroom();" class="signup" >
+                            <form onsubmit="gotoroom();" class="signup" >
+                                
                                 <div class="field">
                                     <input type="text" placeholder="Your Name" id="name-ag" required>
                                 </div>
@@ -325,10 +326,11 @@
                                 <div class="field btn">
                                     <div class="btn-layer">
                                     </div>
+                                    <!--<button onclick="gotoroom()">go to room</button>-->
                                     <input type="submit" value="Join">
                                 </div>
                             </form>
-                   
+
                         </div>
                     </div>
                 </div>
