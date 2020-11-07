@@ -1,4 +1,6 @@
+<!DOCTYPE html>
 <html>
+<!--  http://sangsoonam.github.io/2019/07/27/how-to-embed-a-google-drive-video.html-->
 
 <head lang="en" dir="ltr">
     <meta charset="utf-8">
@@ -9,213 +11,246 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="venobox/venobox.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-storage.js"></script>
+    <script src="index.js"></script>
     <nav class="navbar navbar-dark" style="background-color: #c4302b;">
         <a class="navbar-brand mx-auto" href="#" style="font-weight: 800;">Name</a>
     </nav>
-    <!-- previous sample -->
-    <!-- <div class="container login-container">
+
+    <div style="background-color: #C0E7FA; border-radius: 5px; padding: 20px; text-align: center;">
+        Genre : <input type="text" id="search" /><br><br>
+        <button onclick="searchit()">Recommend</button><br><br>
         <div class="row">
-            <div class="col-md-6 login-form-1">
-                <h2>Create a Room</h2>
-                <form>
-                    <div class="form-group">
-                        <input type="url" class="form-control" placeholder="Your Name *" value="" />
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="URL for Video *" value="" />
-                    </div>
-                    <div class="form-group">
-                        <button type="button" class="btn rounded-pill btnSubmit">Generate Room Code</button>
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-6 login-form-2">
-                <h2>Join a Room</h2>
-                <form>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Name *" value="" />
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Room Code *" value="" />
-                    </div>
-                    <div class="form-group">
-                        <button type="button" class="btn rounded-pill btnSubmit">Join Room</button>
-                    </div>
-                </form>
+            <div class="col-md-12">
+                <div class="row">
+                    <figure class="col-lg-6">
+
+                        <a class="venobox" id=1 data-autoplay="true" data-vbtype="video"
+                            href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
+                            <img alt="picture" src="bg.png" class="img-fluid" />
+                            <div class="play-btn"><i class="fa fa-play"></i></div>
+                        </a>
+                        <p id=10></p>
+                    </figure>
+
+                    <figure class="col-lg-6">
+                        <a class="venobox" id=2 data-autoplay="true" data-vbtype="video"
+                            href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
+                            <img alt="picture" src="bg.png" class="img-fluid" />
+                            <div class="play-btn"><i class="fa fa-play"></i></div>
+                        </a>
+                        <p id=20></p>
+                    </figure>
+
+                    <figure class="col-lg-6">
+                        <a class="venobox" id=3 data-autoplay="true" data-vbtype="video"
+                            href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
+                            <img alt="picture" src="bg.png" class="img-fluid" />
+                            <div class="play-btn"><i class="fa fa-play"></i></div>
+                        </a>
+                        <p id=30></p>
+                    </figure>
+
+                    <figure class="col-md-6">
+                        <a class="venobox" id=4 data-autoplay="true" data-vbtype="video"
+                            href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
+                            <img alt="picture" src="bg.png" class="img-fluid" />
+                            <div class="play-btn"><i class="fa fa-play"></i></div>
+                        </a>
+                        <p id=40></p>
+                    </figure>
+
+                    <figure class="col-md-6">
+                        <a class="venobox" id=5 data-autoplay="true" data-vbtype="video"
+                            href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
+                            <img alt="picture" src="bg.png" class="img-fluid" />
+                            <div class="play-btn"><i class="fa fa-play"></i></div>
+                        </a>
+                        <p id=50></p>
+                    </figure>
+
+                    <figure class="col-md-6">
+                        <a class="venobox" id=6 data-autoplay="true" data-vbtype="video"
+                            href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
+                            <img alt="picture" src="bg.png" class="img-fluid" />
+                            <div class="play-btn"><i class="fa fa-play"></i></div>
+                        </a>
+                        <p id=60></p>
+                    </figure>
+
+                    <figure class="col-md-6">
+                        <a class="venobox" id=7 data-autoplay="true" data-vbtype="video"
+                            href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
+                            <img alt="picture" src="bg.png" class="img-fluid" />
+                            <div class="play-btn"><i class="fa fa-play"></i></div>
+                        </a>
+                        <p id=70></p>
+                    </figure>
+
+                    <figure class="col-md-6">
+                        <a class="venobox" id=8 data-autoplay="true" data-vbtype="video"
+                            href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
+                            <img alt="picture" src="bg.png" class="img-fluid" />
+                            <div class="play-btn"><i class="fa fa-play"></i></div>
+                        </a>
+                        <p id=80></p>
+                    </figure>
+                    <figure class="col-md-6">
+                        <a class="venobox" id=9 data-autoplay="true" data-vbtype="video"
+                            href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
+                            <img alt="picture" src="bg.png" class="img-fluid" />
+                            <div class="play-btn"><i class="fa fa-play"></i></div>
+                        </a>
+                        <p id=90></p>
+                    </figure>
+
+                    <figure class="col-md-6">
+                        <a class="venobox" id=10 data-autoplay="true" data-vbtype="video"
+                            href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
+                            <img alt="picture" src="bg.png" class="img-fluid" />
+                            <div class="play-btn"><i class="fa fa-play"></i></div>
+                        </a>
+                        <p id=100></p>
+                    </figure>
+                    <figure class="col-md-6">
+                        <a class="venobox" id=11 data-autoplay="true" data-vbtype="video"
+                            href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
+                            <img alt="picture" src="bg.png" class="img-fluid" />
+                            <div class="play-btn"><i class="fa fa-play"></i></div>
+                        </a>
+                        <p id=110></p>
+                    </figure>
+
+                    <figure class="col-md-6">
+                        <a class="venobox" id=12 data-autoplay="true" data-vbtype="video"
+                            href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
+                            <img alt="picture" src="bg.png" class="img-fluid" />
+                            <div class="play-btn"><i class="fa fa-play"></i></div>
+                        </a>
+                        <p id=120></p>
+                    </figure>
+                    <figure class="col-md-6">
+                        <a class="venobox" id=13 data-autoplay="true" data-vbtype="video"
+                            href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
+                            <img alt="picture" src="bg.png" class="img-fluid" />
+                            <div class="play-btn"><i class="fa fa-play"></i></div>
+                        </a>
+                        <p id=130></p>
+                    </figure>
+
+                    <figure class="col-md-6">
+                        <a class="venobox" id=14 data-autoplay="true" data-vbtype="video"
+                            href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
+                            <img alt="picture" src="bg.png" class="img-fluid" />
+                            <div class="play-btn"><i class="fa fa-play"></i></div>
+                        </a>
+                        <p id=140></p>
+                    </figure>
+                    <figure class="col-md-6">
+                        <a class="venobox" id=15 data-autoplay="true" data-vbtype="video"
+                            href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
+                            <img alt="picture" src="bg.png" class="img-fluid" />
+                            <div class="play-btn"><i class="fa fa-play"></i></div>
+                        </a>
+                        <p id=150></p>
+                    </figure>
+
+                    <figure class="col-md-6">
+                        <a class="venobox" id=16 data-autoplay="true" data-vbtype="video"
+                            href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
+                            <img alt="picture" src="bg.png" class="img-fluid" />
+                            <div class="play-btn"><i class="fa fa-play"></i></div>
+                        </a>
+                        <p id=160></p>
+                    </figure>
+                </div>
             </div>
         </div>
-    </div> -->
-    <div class="container-fluid homepage" style="padding-top: 7%;background-image: url(bg.jpg);">
-        <div class="row">
-            <div class="col-lg-6 overflow-auto" style="padding-left: 10%; max-height: 470px;">
-                <!-- an about section to write about what the website is -->
-                <div style="background-color: #C0E7FA; border-radius: 5px; padding: 20px; text-align: center;">
-                    <h1>Some title</h1>
-                    <h3>Some text</h3>
-                    <!-- <a class="venobox" data-autoplay="true" data-vbtype="video"
-                        href="https://youtu.be/VHgBM3NmrVk"><button type="button"
-                            class="btn rounded-pill btn-primary">Watch Video</button></a> -->
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="row">
-                                <figure class="col-lg-6">
-                                    
-                                    <a class="venobox" data-autoplay="true" data-vbtype="video"
-                        href="https://youtu.be/VHgBM3NmrVk"
-                                        data-size="1600x1067">
-                                        <img alt="picture"
-                                            src="bg.png"
-                                            class="img-fluid" />
-                                        <div class="play-btn"><i class="fa fa-play"></i></div>
-                                    </a>
-                                </figure>
-    
-                                <figure class="col-lg-6">
-                                    <a class="venobox" data-autoplay="true" data-vbtype="video"
-                        href="https://youtu.be/VHgBM3NmrVk"
-                                        data-size="1600x1067">
-                                        <img alt="picture"
-                                            src="bg.png"
-                                            class="img-fluid" />
-                                        <div class="play-btn"><i class="fa fa-play"></i></div>
-                                    </a>
-                                </figure>
-    
-                                <figure class="col-lg-6">
-                                    <a class="venobox" data-autoplay="true" data-vbtype="video"
-                        href="https://youtu.be/VHgBM3NmrVk"
-                                        data-size="1600x1067">
-                                        <img alt="picture"
-                                            src="bg.png"
-                                            class="img-fluid" />
-                                        <div class="play-btn"><i class="fa fa-play"></i></div>
-                                    </a>
-                                </figure>
-    
-                                <figure class="col-md-6">
-                                    <a class="venobox" data-autoplay="true" data-vbtype="video"
-                        href="https://youtu.be/VHgBM3NmrVk"
-                                        data-size="1600x1067">
-                                        <img alt="picture"
-                                            src="bg.png"
-                                            class="img-fluid" />
-                                        <div class="play-btn"><i class="fa fa-play"></i></div>
-                                    </a>
-                                </figure>
-    
-                                <figure class="col-md-6">
-                                    <a class="venobox" data-autoplay="true" data-vbtype="video"
-                        href="https://youtu.be/VHgBM3NmrVk"
-                                        data-size="1600x1067">
-                                        <img alt="picture"
-                                            src="bg.png"
-                                            class="img-fluid" />
-                                        <div class="play-btn"><i class="fa fa-play"></i></div>
-                                    </a>
-                                </figure>
-    
-                                <figure class="col-md-6">
-                                    <a class="venobox" data-autoplay="true" data-vbtype="video"
-                        href="https://youtu.be/VHgBM3NmrVk"
-                                        data-size="1600x1067">
-                                        <img alt="picture"
-                                            src="bg.png"
-                                            class="img-fluid" />
-                                        <div class="play-btn"><i class="fa fa-play"></i></div>
-                                    </a>
-                                </figure>
-    
-                                <figure class="col-md-6">
-                                    <a class="venobox" data-autoplay="true" data-vbtype="video"
-                        href="https://youtu.be/VHgBM3NmrVk"
-                                        data-size="1600x1067">
-                                        <img alt="picture"
-                                            src="bg.png"
-                                            class="img-fluid" />
-                                        <div class="play-btn"><i class="fa fa-play"></i></div>
-                                    </a>
-                                </figure>
-    
-                                <figure class="col-md-6">
-                                    <a class="venobox" data-autoplay="true" data-vbtype="video"
-                        href="https://youtu.be/VHgBM3NmrVk"
-                                        data-size="1600x1067">
-                                        <img alt="picture"
-                                            src="bg.png"
-                                            class="img-fluid" />
-                                        <div class="play-btn"><i class="fa fa-play"></i></div>
-                                    </a>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
 
-                    
-                </div>
 
-            </div>
-            <div class="col-lg-6" style="padding-left: 10%; padding-right:10%;padding-top: auto;margin-left: auto;
+    </div>
+
+    </div>
+    <div class="col-lg-6" style="padding-left: 10%; padding-right:10%;padding-top: auto;margin-left: auto;
             margin-right: auto;">
-                <div class="wrapper">
-                    <div class="title-text">
-                        <div class="title login">Create a Room</div>
-                        <div class="title signup">Join a Room</div>
+        <div class="wrapper">
+            <div class="title-text">
+                <div class="title login">Create a Room</div>
+                <div class="title signup">Join a Room</div>
+            </div>
+            <div class="form-container">
+                <div class="slide-controls">
+                    <input type="radio" name="slide" id="login" checked>
+                    <input type="radio" name="slide" id="signup">
+                    <label for="login" class="slide login">Create</label>
+                    <label for="signup" class="slide signup">Join</label>
+                    <div class="slider-tab">
                     </div>
-                    <div class="form-container">
-                        <div class="slide-controls">
-                            <input type="radio" name="slide" id="login" checked>
-                            <input type="radio" name="slide" id="signup">
-                            <label for="login" class="slide login">Create</label>
-                            <label for="signup" class="slide signup">Join</label>
-                            <div class="slider-tab">
+                </div>
+                <div class="form-inner">
+                    <form onsubmit="return saveroom();" class="login">
+                        <div class="field">
+                            <input type="text" placeholder="Your Name" id="name" required>
+                        </div>
+                        <div class="field">
+                            <input type="email" placeholder="Your email" id="email" required>
+                        </div>
+                        <div class="field">
+                            <input type="url" placeholder="URL of Video" id="link">
+                        </div>
+                        <center>
+                            <h2>OR</h2>
+                        </center>
+                        <!--<div class="field">-->
+                        <div class="field">
+                            <input type="url" placeholder="Drive Link of Video" id="drive">
+                        </div>
+                        <center>
+                            <h2>OR</h2>
+                        </center>
+                        <input type="file" id="device" onchange="uploadFile();">
+                        <div class="field btn">
+                            <div class="btn-layer">
                             </div>
-                        </div>
-                        <div class="form-inner">
-                            <form action="#" class="login">
-                                <div class="field">
-                                    <input type="text" placeholder="Your Name" required>
-                                </div>
-                                <div class="field">
-                                    <input type="url" placeholder="URL of Video" required>
-                                </div>
 
-                                <div class="field btn">
-                                    <div class="btn-layer">
-                                    </div>
-                                    <input type="submit" value="Generate Room Code">
-                                </div>
-                                <div class="signup-link">
-                                    Want to join an existing room? <a href="">Join now</a></div>
-                            </form>
-                            <form action="#" class="signup">
-                                <div class="field">
-                                    <input type="text" placeholder="Your Name" required>
-                                </div>
-                                <div class="field">
-                                    <input type="text" placeholder="Room Code" required>
-                                </div>
-                                <div class="field btn">
-                                    <div class="btn-layer">
-                                    </div>
-                                    <input type="submit" value="Join">
-                                </div>
-                            </form>
+                            <input type="submit" value="Generate Room Code">
                         </div>
-                    </div>
+                        <div class="signup-link">
+                            Want to join an existing room? <a href="">Join now</a></div>
+                    </form>
+                    <form onsubmit="return gotoroom();" class="signup">
+                        <div class="field">
+                            <input type="text" placeholder="Your Name" id="name-ag" required>
+                        </div>
+                        <div class="field">
+                            <input type="text" placeholder="Room Code" id="your-key" required>
+                        </div>
+                        <div class="field btn">
+                            <div class="btn-layer">
+                            </div>
+                            <input type="submit" value="Join">
+                        </div>
+                    </form>
+
                 </div>
             </div>
         </div>
+    </div>
+    </div>
     </div>
     <div class="container-fluid" style="padding-top: 3%;padding-bottom:4%;background-color:#ea5455; ">
         <div class="row" style="padding-left:10%;padding-right:10%;">
