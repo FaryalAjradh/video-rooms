@@ -1,5 +1,6 @@
+<!DOCTYPE html>
 <html>
-
+<!--  http://sangsoonam.github.io/2019/07/27/how-to-embed-a-google-drive-video.html-->
 <head lang="en" dir="ltr">
     <meta charset="utf-8">
     <title>HackCBS</title>
@@ -22,6 +23,7 @@
 
 <body><script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-storage.js"></script>
         <script src="index.js"></script>
     <nav class="navbar navbar-dark" style="background-color: #c4302b;">
         <a class="navbar-brand mx-auto" href="#" style="font-weight: 800;">Name</a>
@@ -297,20 +299,23 @@
                                 <div class="field">
                                     <input type="url" placeholder="URL of Video" id="link">
                                 </div>
-                                <center><h1>OR</h1></center>
-                                <div class="field">
-                                    <input type="file">
-                                </div>
+                                <center><h2>OR</h2></center>
+                                <!--<div class="field">-->
+                                    <div class="field">
+                                        <input type="url" placeholder="Drive Link of Video" id="drive">
+                                    </div>
+                                    <center><h2>OR</h2></center>
+                                    <input type="file" id="device" onchange="uploadFile();">
                                 <div class="field btn">
                                     <div class="btn-layer">
                                     </div>
-                    
+                                  
                                     <input type="submit" value="Generate Room Code">
                                 </div>
                                 <div class="signup-link">
                                     Want to join an existing room? <a href="">Join now</a></div>
                             </form>
-                            <form class="signup" onsubmit="return goto();">
+                            <form onsubmit="return gotoroom();" class="signup" >
                                 <div class="field">
                                     <input type="text" placeholder="Your Name" id="name-ag" required>
                                 </div>
@@ -323,6 +328,7 @@
                                     <input type="submit" value="Join">
                                 </div>
                             </form>
+                   
                         </div>
                     </div>
                 </div>

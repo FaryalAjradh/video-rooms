@@ -7,7 +7,8 @@ function getRandomString(length) {
         }
         return result;
     }
-    var keyo, ytlink;
+var keyo, ytlink;
+var file_name;
 var firebaseConfig = {
     apiKey: "AIzaSyDq1GV2WLn6OPG-tqRxdx2Fuc6TFoXjTxM",
     authDomain: "streaming-aas.firebaseapp.com",
@@ -23,16 +24,28 @@ var firebaseConfig = {
     keyo = getRandomString(10);
     //alert(keyo);
     console.log(keyo);
-    ytlink = document.getElementById("link").value;
-    var h = ytlink.split("=");
-    var final = h[h.length - 1];
-    ytlink = final;
-    database.child(keyo).set(ytlink);
-    alert("Your key is " + keyo);
-    sendkey(keyo); 
-    document.getElementById("link").value = "";
-    document.getElementById("name").value = "";
-  }  //document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+    sendkey(keyo);
+    if (document.getElementById("link").value.length == 0 && document.getElementById("drive").value.length == 0){
+        console.log(file_name);
+        database.child(keyo).set(file_name);
+    }
+    else if(document.getElementById("device").value.length == 0 && document.getElementById("drive").value.length == 0){
+            ytlink = document.getElementById("link").value;
+            //var h = ytlink.split("=");
+            //var final = h[h.length - 1];
+            ytlink = "1^" + ytlink;
+            database.child(keyo).set(ytlink);
+        }
+    else{
+        ytlink = document.getElementById("drive").value;
+        ytlink = "2^" + ytlink;
+        database.child(keyo).set(ytlink);
+    }
+        alert("Your key is " + keyo + "\n" + "You will receive an email !");
+        document.getElementById("link").value = "";
+        document.getElementById("device").value = "";
+        document.getElementById("name").value = "";
+  } 
 
   //var firebaseOrdersCollection = database.ref().child('Questions');
    
@@ -42,7 +55,7 @@ var firebaseConfig = {
     document.getElementById("myFrame").src = url;
   });
 */
-function goto(){
+function gotoroom(){
     //window.localStorage.setItem("ytlink", ytlink);
     //console.log(localStorage.getItem("ytlink"));
     var name = document.getElementById("name-ag").value;
@@ -75,6 +88,7 @@ function goto(){
 
 
 function sendkey(key) {
+    console.log("sending");
     var email = document.getElementById("email").value;
     var name = document.getElementById("name").value;
     Email.send({
@@ -117,4 +131,22 @@ fetch(url)
     //document.getElementById("video").src = `https://www.youtube.com/embed/${data.items[0].id.videoId}`;
 });
 document.getElementById("search").value = "";     
+}
+
+const storage = firebase.storage();
+function uploadFile(){ 
+  // Created a Storage Reference with root dir
+  var storageRef = firebase.storage().ref();
+  // Get the file from DOM
+  alert("The file upload might take a while, hang on till then :)");
+  var file = document.getElementById("device").files[0];
+  console.log(file);
+  //dynamically set reference to the file name
+  var thisRef = storageRef.child(file.name);
+  file_name = file.name;
+  //put request upload file to firebase storage
+  thisRef.put(file).then(function(snapshot) {
+     alert("File Uploaded")
+     //console.log('Uploaded a blob or file!');
+  });
 }
