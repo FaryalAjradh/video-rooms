@@ -24,7 +24,13 @@
         <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-storage.js"></script>
         <script src="theatre.js"></script>
-        <iframe id="myFrame" width="71%" height="70%" style="margin-left:1.5%;margin-top:6.1%;margin-right:2%;"></iframe>
+        <div id="row">
+            <iframe id="myFrame" width="71%" height="70%" style="margin-left:1.5%;margin-top:6.1%;margin-right:2%;"></iframe> 
+        </div>
+        <div id="row">
+            <iframe "https://chat-at-remo.herokuapp.com/?key=link&name=name"></iframe>
+        </div>
+        
         <script>
          
             document.getElementById("name").innerHTML = window.localStorage.getItem("Linktovideo");
