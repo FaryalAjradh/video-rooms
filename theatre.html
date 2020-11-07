@@ -26,7 +26,7 @@ const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResult
 fetch(url)
   .then(response => response.json())
   .then(data => {
-            for(var i = 0; i < 20; i++){
+            for(var i = 0; i < 8; i++){
                 if(data.items[i].id.videoId != undefined){
                     console.log(data.items[i].id.videoId);
                 }

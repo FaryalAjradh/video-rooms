@@ -83,13 +83,7 @@
     <div class="container-fluid homepage" style="padding-top: 1%;background-image: url(bg.jpg);">
         <div class="row">
             <div class="col-lg-6 overflow-auto" style="padding-left: 10%; max-height: 700px;">
-                <!-- an about section to write about what the website is -->
                 <div style="background-color: #C0E7FA; border-radius: 5px; padding: 20px; text-align: center;">
-                    <!--<h1>Some title</h1>
-                    <h3>Some text</h3>-->
-                    <!-- <a class="venobox" data-autoplay="true" data-vbtype="video"
-                        href="https://youtu.be/VHgBM3NmrVk"><button type="button"
-                            class="btn rounded-pill btn-primary">Watch Video</button></a> -->
                     Genre : <input type="text" id="search" /><br><br>
                     <button onclick="searchit()">Recommend</button><br><br>
                     <div class="row">
@@ -102,7 +96,9 @@
                                         <img alt="picture" src="bg.png" class="img-fluid" />
                                         <div class="play-btn"><i class="fa fa-play"></i></div>
                                     </a>
-                                    <p id=10></p>
+                                    <p id=10 class="urltext" style="display: none;"></p>
+                                    <button class="btn btn-danger rounded-pill" id="copybtn" style="margin-top: 10px;">Copy URL 👆</button>
+                                    
                                 </figure>
 
                                 <figure class="col-lg-6">
@@ -111,7 +107,9 @@
                                         <img alt="picture" src="bg.png" class="img-fluid" />
                                         <div class="play-btn"><i class="fa fa-play"></i></div>
                                     </a>
-                                    <p id=20></p>
+                                    <p id=20 class="urltext2" style="display: none;"></p>
+                                    <button class="btn btn-danger rounded-pill" id="copybtn2" style="margin-top: 10px;">Copy URL 👆</button>
+                                    
                                 </figure>
 
                                 <figure class="col-lg-6">
@@ -120,121 +118,150 @@
                                         <img alt="picture" src="bg.png" class="img-fluid" />
                                         <div class="play-btn"><i class="fa fa-play"></i></div>
                                     </a>
-                                    <p id=30></p>
+                                    <p id=30 class="urltext3" style="display: none;"></p>
+                                    <button class="btn btn-danger rounded-pill" id="copybtn3" style="margin-top: 10px;">Copy URL 👆</button>
+                                    
                                 </figure>
 
-                                <figure class="col-md-6">
+                                <figure class="col-lg-6">
                                     <a class="venobox" id=4 data-autoplay="true" data-vbtype="video"
                                         href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
                                         <img alt="picture" src="bg.png" class="img-fluid" />
                                         <div class="play-btn"><i class="fa fa-play"></i></div>
                                     </a>
-                                    <p id=40></p>
+                                    <p id=40 class="urltext4" style="display: none;"></p>
+                                    <button class="btn btn-danger rounded-pill" id="copybtn4" style="margin-top: 10px;">Copy URL 👆</button>
+                                    
                                 </figure>
 
-                                <figure class="col-md-6">
+                                <figure class="col-lg-6">
                                     <a class="venobox" id=5 data-autoplay="true" data-vbtype="video"
                                         href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
                                         <img alt="picture" src="bg.png" class="img-fluid" />
                                         <div class="play-btn"><i class="fa fa-play"></i></div>
                                     </a>
-                                    <p id=50></p>
+                                    <p id=50 class="urltext5" style="display: none;"></p>
+                                    <button class="btn btn-danger rounded-pill" id="copybtn5" style="margin-top: 10px;">Copy URL 👆</button>
+                                    
                                 </figure>
 
-                                <figure class="col-md-6">
+                                <figure class="col-lg-6">
                                     <a class="venobox" id=6 data-autoplay="true" data-vbtype="video"
                                         href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
                                         <img alt="picture" src="bg.png" class="img-fluid" />
                                         <div class="play-btn"><i class="fa fa-play"></i></div>
                                     </a>
-                                    <p id=60></p>
+                                    <p id=60 class="urltext6" style="display: none;"></p>
+                                    <button class="btn btn-danger rounded-pill" id="copybtn6" style="margin-top: 10px;">Copy URL 👆</button>
+                                    
                                 </figure>
 
-                                <figure class="col-md-6">
+                                <figure class="col-lg-6">
                                     <a class="venobox" id=7 data-autoplay="true" data-vbtype="video"
                                         href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
                                         <img alt="picture" src="bg.png" class="img-fluid" />
                                         <div class="play-btn"><i class="fa fa-play"></i></div>
                                     </a>
-                                    <p id=70></p>
+                                    <p id=70 class="urltext7" style="display: none;"></p>
+                                    <button class="btn btn-danger rounded-pill" id="copybtn7" style="margin-top: 10px;">Copy URL 👆</button>
+                                    
                                 </figure>
 
-                                <figure class="col-md-6">
+                                <figure class="col-lg-6">
                                     <a class="venobox" id=8 data-autoplay="true" data-vbtype="video"
                                         href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
                                         <img alt="picture" src="bg.png" class="img-fluid" />
                                         <div class="play-btn"><i class="fa fa-play"></i></div>
                                     </a>
-                                    <p id=80></p>
+                                    <p id=80 class="urltext8" style="display: none;"></p>
+                                    <button class="btn btn-danger rounded-pill" id="copybtn8" style="margin-top: 10px;">Copy URL 👆</button>
+                                    
                                 </figure>
-                                <figure class="col-md-6">
+                            <!--
+                                <figure class="col-lg-6">
                                     <a class="venobox" id=9 data-autoplay="true" data-vbtype="video"
                                         href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
                                         <img alt="picture" src="bg.png" class="img-fluid" />
                                         <div class="play-btn"><i class="fa fa-play"></i></div>
                                     </a>
-                                    <p id=90></p>
+                                     <p id=90 class="urltext" style="display: none;"></p>
+                                    <button class="btn btn-danger rounded-pill" id="copybtn" style="margin-top: 10px;">Copy URL 👆</button>
+                                    
                                 </figure>
 
-                                <figure class="col-md-6">
+                                <figure class="col-lg-6">
                                     <a class="venobox" id=10 data-autoplay="true" data-vbtype="video"
                                         href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
                                         <img alt="picture" src="bg.png" class="img-fluid" />
                                         <div class="play-btn"><i class="fa fa-play"></i></div>
                                     </a>
-                                    <p id=100></p>
+                                    <p id=100 class="urltext" style="display: none;"></p>
+                                    <button class="btn btn-danger rounded-pill" id="copybtn" style="margin-top: 10px;">Copy URL 👆</button>
+                                    
                                 </figure>
-                                <figure class="col-md-6">
+                                <figure class="col-lg-6">
                                     <a class="venobox" id=11 data-autoplay="true" data-vbtype="video"
                                         href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
                                         <img alt="picture" src="bg.png" class="img-fluid" />
                                         <div class="play-btn"><i class="fa fa-play"></i></div>
                                     </a>
-                                    <p id=110></p>
+                                    <p id=110 class="urltext" style="display: none;"></p>
+                                    <button class="btn btn-danger rounded-pill" id="copybtn" style="margin-top: 10px;">Copy URL 👆</button>
+                                    
                                 </figure>
 
-                                <figure class="col-md-6">
+                                <figure class="col-lg-6">
                                     <a class="venobox" id=12 data-autoplay="true" data-vbtype="video"
                                         href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
                                         <img alt="picture" src="bg.png" class="img-fluid" />
                                         <div class="play-btn"><i class="fa fa-play"></i></div>
                                     </a>
-                                    <p id=120></p>
+                                    <p id=120 class="urltext" style="display: none;"></p>
+                                    <button class="btn btn-danger rounded-pill" id="copybtn" style="margin-top: 10px;">Copy URL 👆</button>
+                                    
                                 </figure>
-                                <figure class="col-md-6">
+                                <figure class="col-lg-6">
                                     <a class="venobox" id=13 data-autoplay="true" data-vbtype="video"
                                         href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
                                         <img alt="picture" src="bg.png" class="img-fluid" />
                                         <div class="play-btn"><i class="fa fa-play"></i></div>
                                     </a>
-                                    <p id=130></p>
+                                    <p id=130 class="urltext" style="display: none;"></p>
+                                    <button class="btn btn-danger rounded-pill" id="copybtn" style="margin-top: 10px;">Copy URL 👆</button>
+                                    
                                 </figure>
 
-                                <figure class="col-md-6">
+                                <figure class="col-lg-6">
                                     <a class="venobox" id=14 data-autoplay="true" data-vbtype="video"
                                         href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
                                         <img alt="picture" src="bg.png" class="img-fluid" />
                                         <div class="play-btn"><i class="fa fa-play"></i></div>
                                     </a>
-                                    <p id=140></p>
+                                    <p id=140 class="urltext" style="display: none;"></p>
+                                    <button class="btn btn-danger rounded-pill" id="copybtn" style="margin-top: 10px;">Copy URL 👆</button>
+                                    
                                 </figure>
-                                <figure class="col-md-6">
+                                <figure class="col-lg-6">
                                     <a class="venobox" id=15 data-autoplay="true" data-vbtype="video"
                                         href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
                                         <img alt="picture" src="bg.png" class="img-fluid" />
                                         <div class="play-btn"><i class="fa fa-play"></i></div>
                                     </a>
-                                    <p id=150></p>
+                                    <p id=150 class="urltext" style="display: none;"></p>
+                                    <button class="btn btn-danger rounded-pill" id="copybtn" style="margin-top: 10px;">Copy URL 👆</button>
+                                    
                                 </figure>
 
-                                <figure class="col-md-6">
+                                <figure class="col-lg-6">
                                     <a class="venobox" id=16 data-autoplay="true" data-vbtype="video"
                                         href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
                                         <img alt="picture" src="bg.png" class="img-fluid" />
                                         <div class="play-btn"><i class="fa fa-play"></i></div>
                                     </a>
-                                    <p id=160></p>
-                                </figure>
+                                    <p id=160 class="urltext" style="display: none;"></p>
+                                    <button class="btn btn-danger rounded-pill" id="copybtn" style="margin-top: 10px;">Copy URL 👆</button>
+                                    
+                                </figure> -->
                             </div>
                         </div>
                     </div>
@@ -411,6 +438,59 @@
 
         </form>
     </div>
+    <script>
+        function copyURL(copyId) {
+            var $inp = $("<input>");
+            $("body").append($inp);
+            $inp.val($("" + copyId).text()).select();
+            document.execCommand("copy");
+            $inp.remove();
+            $(".alert").fadeIn(500, function () {
+                $(".alert").fadeOut();
+            });
+
+        }
+        $(document).ready(function () {
+            $("#copybtn").click(function () {
+                copyURL(".urltext");
+            });
+        });
+        $(document).ready(function () {
+            $("#copybtn2").click(function () {
+                copyURL(".urltext2");
+            });
+        });
+        $(document).ready(function () {
+            $("#copybtn3").click(function () {
+                copyURL(".urltext3");
+            });
+        });
+        $(document).ready(function () {
+            $("#copybtn4").click(function () {
+                copyURL(".urltext4");
+            });
+        });
+        $(document).ready(function () {
+            $("#copybtn5").click(function () {
+                copyURL(".urltext5");
+            });
+        });
+        $(document).ready(function () {
+            $("#copybtn6").click(function () {
+                copyURL(".urltext6");
+            });
+        });
+        $(document).ready(function () {
+            $("#copybtn7").click(function () {
+                copyURL(".urltext7");
+            });
+        });
+        $(document).ready(function () {
+            $("#copybtn8").click(function () {
+                copyURL(".urltext8");
+            });
+        });
+    </script>
     <script>
         const loginText = document.querySelector(".title-text .login");
         const loginForm = document.querySelector("form.login");
