@@ -49,7 +49,7 @@ var firebaseConfig = {
       });
 
     }
-    document.getElementById("chat").src = "https://chat-at-remo.herokuapp.com/?key=" + link +" &name="+ name;
+    //document.getElementById("chat").src = "https://chat-at-remo.herokuapp.com/?key=" + link +" &name="+ name;
   });
   function openForm() {
     document.getElementById("myForm").style.display = "block";
