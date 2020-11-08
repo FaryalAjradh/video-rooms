@@ -19,17 +19,20 @@
         <link rel="stylesheet" href="venobox/venobox.css" type="text/css" media="screen" />
         <link rel="stylesheet" href="style.css">
     </head>
-    <body style="background-image: url(theatre.png);background-repeat:no-repeat; background-size: cover;">
+    <body style="background-image: url(bg.jpg);background-repeat:no-repeat; background-size: cover;">
         <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-storage.js"></script>
         <script src="theatre.js"></script>
-        <div id="row">
-            <iframe id="myFrame" width="71%" height="70%" style="margin-left:1.5%;margin-top:6.1%;margin-right:2%;"></iframe> 
-        </div>
-        <div id="row">
-            <iframe "https://chat-at-remo.herokuapp.com/?key=link&name=name"></iframe>
-        </div>
+        <div class="row" style="padding-top:2%;padding-left:2%;">
+            <div class="col-8">
+                <iframe id="myFrame" width="100%" height="300%" style="background-color:#bbb;"></iframe> 
+            </div>
+            <div class="col-4">
+                <iframe src="https://chat-at-remo.herokuapp.com/?key=link&name=name" width="100%" height="300%" style="background-color:#bbb;"></iframe>
+            </div>
+          </div>
+           
         
         <script>
          
