@@ -71,7 +71,7 @@ function gotoroom(){
         console.log(keys.length);
         var present = keys.includes(val);
         console.log(present);
-        window.location.href = "why.html";
+        //window.location.href = "why.html";
         if (present == true) {
             window.localStorage.setItem("Linktovideo", val);
             window.localStorage.setItem("name", name);
@@ -94,8 +94,9 @@ function printfd(){
     var name = document.getElementById("name-ag").value;
     //var fire = firebase.database().ref('Link');
     var val = document.getElementById("your-key").value;
-    alert(name);
-    alert(val);
+    //alert(name);
+    //alert(val);
+    //document.getElementById("chit").src = "https://chat-at-remo.herokuapp.com/?" + key + "=link&name=" + name;
     window.localStorage.setItem("Linktovideo", val);
     window.localStorage.setItem("name", name);
     window.location.href = "theatre.html?key=" + val + "&name=" + name;
@@ -108,12 +109,12 @@ function sendkey(key) {
     Email.send({
 
         Host: "smtp.gmail.com",
-        Username: "removirtual@gmail.com",
-        Password: "removirtual123$",
+        Username: "vstream342@gmail.com",
+        Password: "vstream123$",
         To: email,
-        From: "removirtual@gmail.com",
-        Subject: "Interview Confirmation",
-        Body: "Hey " + name + "<br>" + "Your key is " + key + "<br>." + "Visit the URL : https://removirtual-fa3b3.web.app/pre-interview/index.html .",
+        From: "vstream342@gmail.com",
+        Subject: "VStream Confirmation",
+        Body: "Hey " + name + "<br>" + "Your key is " + key ,
     })
 }
 

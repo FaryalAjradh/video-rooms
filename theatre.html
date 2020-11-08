@@ -40,18 +40,23 @@
         speed: 4.10
     })
         </script>
+        <div class="row" style="align-content: right;">
+            <button class="btn btn-danger" style="margin-left:90%;text-decoration:none;color:white;margin-top:2%;"><a href="index.html" style="text-decoration:none;color:white;">Logout</a></button>
+        </div>
         <div class="row" style="padding-top:5%;padding-left:2%;padding-right:2%;">
             <div class="col-8">
                 <iframe id="myFrame" width="100%" height="300%" style="background-color:#bbb;"></iframe> 
             </div>
                 <div class="col-4" id="chat">
-              <iframe src = "https://chat-at-remo.herokuapp.com/?key=link&name=name" width="100%" height="300%" style="background-color:#ffda45;"></iframe>
+              <iframe id="chat" src="https://chat-at-remo.herokuapp.com/?key=abcdefg&name=namya" width="100%" height="300%" style="background-color:#ffda45;"></iframe>
             </div> 
         </div>
         <script>
-
-            document.getElementById("name").innerHTML = window.localStorage.getItem("Linktovideo");
-            document.getElementById("link").innerHTML = window.localStorage.getItem("name");
-            </script>
+        
+            console.log(window.localStorage.getItem("Linktovideo"));
+            console.log(window.localStorage.getItem("name"));
+            var link = window.localStorage.getItem("Linktovideo");
+            var name = window.localStorage.getItem("name");
+           </script>
     </body>
 </html>
