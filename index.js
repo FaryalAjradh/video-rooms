@@ -23,6 +23,9 @@ var firebaseConfig = {
   function saveroom(){
     keyo = getRandomString(10);
     //alert(keyo);
+    //document.getElementById("device").value;
+    //document.getElementById("name").value;
+    alert(keyo);
     console.log(keyo);
     sendkey(keyo);
     if (document.getElementById("link").value.length == 0 && document.getElementById("drive").value.length == 0){
@@ -61,7 +64,11 @@ function gotoroom(){
     var name = document.getElementById("name-ag").value;
     var fire = firebase.database().ref('Link');
     var val = document.getElementById("your-key").value;
+    window.localStorage.setItem("Name" , name);
+    window.localStorage.setItem("Key" , val);
     console.log(val);
+    alert(name);
+    alert(val);
     fire.on("value", gotData);
     function gotData(data) {
         data = data.val();
@@ -94,9 +101,9 @@ function printfd(){
     var name = document.getElementById("name-ag").value;
     //var fire = firebase.database().ref('Link');
     var val = document.getElementById("your-key").value;
-    //alert(name);
-    //alert(val);
-    //document.getElementById("chit").src = "https://chat-at-remo.herokuapp.com/?" + key + "=link&name=" + name;
+    window.localStorage.setItem("Name" , name);
+    window.localStorage.setItem("Key" , val);
+    console.log(val);
     window.localStorage.setItem("Linktovideo", val);
     window.localStorage.setItem("name", name);
     window.location.href = "theatre.html?key=" + val + "&name=" + name;
@@ -131,13 +138,14 @@ const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResult
 fetch(url)
   .then(response => response.json())
   .then(data => {
-            for(var i = 1; i <= 16; i++){
+            for(var i = 1; i <= 20; i++){
                 if(data.items[i].id.videoId != undefined){
                     //console.log( document.getElementById(i).href);
                     console.log(data.items[i]);
                     console.log(data.items[i].snippet.thumbnails.medium.url);
-                    document.getElementById(i).href = "https://youtu.be/" + data.items[i].id.videoId;
-                    document.getElementById(i*10).innerHTML = "https://youtu.be/" + data.items[i].id.videoId;
+                    document.getElementById(i*100).src = data.items[i].snippet.thumbnails.medium.url;
+                    document.getElementById(i).href = "https://www.youtube.com/watch?v=" + data.items[i].id.videoId;
+                    document.getElementById(i*10).innerHTML = "https://www.youtube.com/watch?v=" + data.items[i].id.videoId;
                     console.log(data.items[i].id.videoId);
             }
     }

@@ -12,10 +12,15 @@ var firebaseConfig = {
   var link = window.localStorage.getItem("Linktovideo");
   var name = window.localStorage.getItem("name");
   const storage = firebase.storage();
-
+  var n = window.localStorage.getItem("Name");
+  var k = window.localStorage.getItem("Key")
   //var firebaseOrdersCollection = database.ref().child('Questions');
    database.child(link).on('value',(snap)=>{
      console.log(link);
+     console.log("My name is ");
+     console.log(window.localStorage.getItem("Name"));
+     console.log(window.localStorage.getItem("Key"));
+
      console.log(snap.val());
      var l = snap.val();
      if(l.charAt(0) == "1"){
@@ -47,9 +52,10 @@ var firebaseConfig = {
           console.log(file_url);
             
       });
-
     }
-   
+    //console.log('chat stuff');
+    console.log("https://chat-at-remo.herokuapp.com/?key=" + k +"&name=" + n);
+    document.getElementById("chatit").src = "https://chat-at-remo.herokuapp.com/?key=" + k +"&name=" + n;
   });
  
   function openForm() {
